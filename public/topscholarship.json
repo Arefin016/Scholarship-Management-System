@@ -1,0 +1,86 @@
+[
+    {
+        "_id": 1,
+        "universityName": "Oxford University",
+        "universityImage": "https://i.postimg.cc/PJKy06gw/Uni1.jpg",
+        "scholarshipCategory": "Academic Excellence",
+        "universityLocation": {
+            "country": "United Kingdom",
+            "city": "Oxford"
+        },
+        "applicationDeadline": "2024-07-31",
+        "subjectCategory": "Science and Technology",
+        "applicationFees": 20,
+        "rating": 4.8
+    },
+    {
+        "_id": 2,
+        "universityName": "Harvard University",
+        "universityImage": "https://i.postimg.cc/BZCm86jn/Uni2.jpg",
+        "scholarshipCategory": "Financial Need",
+        "universityLocation": {
+            "country": "United States",
+            "city": "Cambridge"
+        },
+        "applicationDeadline": "2024-08-15",
+        "subjectCategory": "Business and Economics",
+        "applicationFees": 25,
+        "rating": 4.7
+    },
+    {
+        "_id": 3,
+        "universityName": "Stanford University",
+        "universityImage": "https://i.postimg.cc/Dyj5gMdV/Uni3.jpg",
+        "scholarshipCategory": "STEM",
+        "universityLocation": {
+            "country": "United States",
+            "city": "Stanford"
+        },
+        "applicationDeadline": "2024-09-01",
+        "subjectCategory": "Engineering",
+        "applicationFees": 15,
+        "rating": 4.9
+    },
+    {
+        "_id": 4,
+        "universityName": "University of Melbourne",
+        "universityImage": "https://i.postimg.cc/BvDgJQWs/Uni4.jpg",
+        "scholarshipCategory": "Women in Technology",
+        "universityLocation": {
+            "country": "Australia",
+            "city": "Melbourne"
+        },
+        "applicationDeadline": "2024-07-20",
+        "subjectCategory": "Computer Science",
+        "applicationFees": 10,
+        "rating": 4.6
+    },
+    {
+        "_id": 5,
+        "universityName": "University of Toronto",
+        "universityImage": "https://i.postimg.cc/fyWj7cVT/Uni5.jpg",
+        "scholarshipCategory": "Community Service",
+        "universityLocation": {
+            "country": "Canada",
+            "city": "Toronto"
+        },
+        "applicationDeadline": "2024-10-10",
+        "subjectCategory": "Social Sciences",
+        "applicationFees": 5,
+        "rating": 4.5
+    },
+    {
+        "_id": 6,
+        "universityName": "National University of Singapore",
+        "universityImage": "https://i.postimg.cc/hPj1f0F2/Uni6.jpg",
+        "scholarshipCategory": "First-Generation College Student",
+        "universityLocation": {
+            "country": "Singapore",
+            "city": "Singapore"
+        },
+        "applicationDeadline": "2024-08-25",
+        "subjectCategory": "Humanities",
+        "applicationFees": 0,
+        "rating": 4.4
+    }
+]
