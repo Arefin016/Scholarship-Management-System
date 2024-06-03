@@ -1,17 +1,34 @@
 import { Link } from "react-router-dom"
 import logo from "../../../assets/home/ScholershipLogo.png"
+import { useContext } from "react"
+import { AuthContext } from "../../../providers/AuthProvider"
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext)
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error))
+  }
+
   const navOptions = (
     <>
-      <li><Link to='/'>Home</Link></li>
-      <li><Link to='/AllScholarship'>All Scholarship</Link></li>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/AllScholarship">All Scholarship</Link>
+      </li>
+      <li>
+        <Link to="/secret">Secret</Link>
+      </li>
     </>
   )
 
   return (
     <>
-      <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-xl bg-black text-white">
+      <div className="navbar pt-3 fixed z-10 bg-opacity-30 max-w-screen-xl bg-black text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -34,18 +51,35 @@ const NavBar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-                {navOptions}
+              {navOptions}
             </ul>
           </div>
           <img className="md:h-16 h-10 md:w-20 w-10" src={logo} alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            {navOptions}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login"><li className="btn">Login</li></Link>
+          {user ? (
+            <>
+              <div className="lg:tooltip lg:mt-4" data-tip={user?.displayName}>
+                <div className="avatar">
+                  <div className="w-12 rounded-full">
+                    <img src={user?.photoURL} />
+                  </div>
+                </div>
+              </div>
+              <button onClick={handleLogOut} className="btn lg:mt-2 ml-2">
+                LogOut
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/login">
+                <li className="btn">Login</li>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </>

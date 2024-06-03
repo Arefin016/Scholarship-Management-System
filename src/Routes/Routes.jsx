@@ -5,6 +5,8 @@ import AllScholarship from "../pages/AllScholarship/AllScholarship"
 import ErrorPage from "../pages/ErrorPage/ErrorPage"
 import Login from "../pages/Login/Login"
 import SignUp from "../pages/SignUp/SignUp"
+import PrivateRoute from "./PrivateRoute"
+import Secret from "../pages/Shared/Secret/Secret"
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +30,10 @@ export const router = createBrowserRouter([
         {
           path: 'signup',
           element: <SignUp></SignUp>
+        },
+        {
+          path: 'secret',
+          element: <PrivateRoute><Secret></Secret></PrivateRoute>
         }
     ]
   },
