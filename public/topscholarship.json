@@ -82,5 +82,33 @@
         "subjectCategory": "Humanities",
         "applicationFees": 0,
         "rating": 4.4
+    },
+    {
+        "_id": 7,
+        "universityName": "National University of Singapore",
+        "universityImage": "https://i.postimg.cc/hPj1f0F2/Uni6.jpg",
+        "scholarshipCategory": "First-Generation College Student",
+        "universityLocation": {
+            "country": "Singapore",
+            "city": "Singapore"
+        },
+        "applicationDeadline": "2024-08-25",
+        "subjectCategory": "Humanities",
+        "applicationFees": 0,
+        "rating": 4.4
+    }
+    {
+        "_id": 8,
+        "universityName": "National University of Singapore",
+        "universityImage": "https://i.postimg.cc/hPj1f0F2/Uni6.jpg",
+        "scholarshipCategory": "First-Generation College Student",
+        "universityLocation": {
+            "country": "Singapore",
+            "city": "Singapore"
+        },
+        "applicationDeadline": "2024-08-25",
+        "subjectCategory": "Humanities",
+        "applicationFees": 0,
+        "rating": 4.4
     }
 ]

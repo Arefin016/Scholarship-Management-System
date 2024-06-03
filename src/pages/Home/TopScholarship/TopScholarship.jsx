@@ -8,7 +8,7 @@ const TopScholarship = () => {
   const [topScholarship, setTopScholarship] = useState([])
 
   useEffect( () => {
-    fetch('topscholarship.json')
+    fetch('http://localhost:5000/topScholarship')
     .then(res => res.json())
     .then(data  => setTopScholarship(data))
   }, [])
