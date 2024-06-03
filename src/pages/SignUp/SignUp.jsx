@@ -1,37 +1,29 @@
-import { useContext } from "react";
 import { Helmet } from "react-helmet-async"
-import { AuthContext } from "../../providers/AuthProvider";
-import { Link } from "react-router-dom";
 
-const Login = () => {
-
-    const {signIn} = useContext(AuthContext);
-
-    const handleLogin = event => {
-        event.preventDefault();
-        const form = event.target;
-        const email = form.email.value;
-        const password = form.password.value;
-        console.log(email, password);
-        signIn(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-    }
-
-
+const SignUp = () => {
   return (
     <div className="hero min-h-screen bg-base-200">
       <Helmet>
-        <title>Scholar || Login</title>
+        <title>Scholar || Sign Up</title>
       </Helmet>
       <div className="hero-content flex-col">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold mb-4">Login Please!</h1>
+          <h1 className="text-5xl font-bold mb-4">Sign Up!</h1>
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handleLogin} className="card-body">
+          <form className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="email"
+                placeholder="name"
+                name="name"
+                className="input input-bordered"
+                required
+              />
+            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -62,14 +54,13 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <input className="btn btn-primary" type="submit" value="Login" />
+              <button className="btn btn-primary">Login</button>
             </div>
           </form>
-          <p><small>New Here? <Link to="/signup">Create an account</Link></small></p>
         </div>
       </div>
     </div>
   )
 }
 
-export default Login
+export default SignUp
