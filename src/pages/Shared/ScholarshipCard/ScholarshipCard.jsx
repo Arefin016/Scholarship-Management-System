@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const ScholarshipCard = ({ scho }) => {
   const {
     universityName,
@@ -6,6 +8,7 @@ const ScholarshipCard = ({ scho }) => {
     applicationDeadline,
     subjectCategory,
     applicationFees,
+    universityLocation,
     rating,
   } = scho
   return (
@@ -21,14 +24,18 @@ const ScholarshipCard = ({ scho }) => {
             Application Deadline: {applicationDeadline}
           </p>
           <p className="font-medium">Subject Cate: {subjectCategory}</p>
+          <p className="font-medium">Address: {universityLocation.country}</p>
+          <p className="font-medium">City: {universityLocation.city}</p>
           <div className="flex md:flex-row flex-col font-medium">
             <p>Fees: ${applicationFees}</p>
             <p>Rating: {rating}</p>
           </div>
           <div className="mt-4">
-            <button className="btn btn-success text-white">
-              Scholarship Details
-            </button>
+            <Link to="/AllScholarship">
+              <button className="btn btn-success text-white">
+                Scholarship Details
+              </button>
+            </Link>
           </div>
         </div>
       </div>

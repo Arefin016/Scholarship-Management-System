@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 const TopScholarship = () => {
 
   const [topScholarship, setTopScholarship] = useState([])
+  const [dataLength, setDataLength] = useState(6)
 
   useEffect( () => {
     fetch('http://localhost:5000/topScholarship')
@@ -20,7 +21,7 @@ const TopScholarship = () => {
       </SectionTitle>
       <div className="grid md:grid-cols-3 grid-cols-1 gap-4 my-5">
         {
-          topScholarship.map(scho => <ScholarshipCard
+          topScholarship.slice(0 , dataLength).map(scho => <ScholarshipCard
           scho={scho}
           key={scho._id}
           ></ScholarshipCard>)
@@ -28,7 +29,7 @@ const TopScholarship = () => {
       </div>
        <div className="md:flex items-center justify-center">
        <Link to="/AllScholarship">
-       <button className="btn btn-outline bg-purple-500 border-0 border-b-4 my-3 text-center">All Scholarship</button>
+       <button onClick={() => setDataLength(topScholarship.length)} className="btn btn-outline bg-purple-500 border-0 border-b-4 my-3 text-center">All Scholarship</button>
        </Link>
        </div>
     </section>

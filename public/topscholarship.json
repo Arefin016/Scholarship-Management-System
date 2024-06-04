@@ -1,114 +1,137 @@
 [
-    {
-        "_id": 1,
-        "universityName": "Oxford University",
-        "universityImage": "https://i.postimg.cc/PJKy06gw/Uni1.jpg",
-        "scholarshipCategory": "Academic Excellence",
-        "universityLocation": {
-            "country": "United Kingdom",
-            "city": "Oxford"
-        },
-        "applicationDeadline": "2024-07-31",
-        "subjectCategory": "Science and Technology",
-        "applicationFees": 20,
-        "rating": 4.8
+  {
+    "universityName": "Oxford University",
+    "universityImage": "https://i.postimg.cc/PJKy06gw/Uni1.jpg",
+    "scholarshipCategory": "Academic Excellence",
+    "universityLocation": {
+      "country": "United Kingdom",
+      "city": "Oxford"
     },
-    {
-        "_id": 2,
-        "universityName": "Harvard University",
-        "universityImage": "https://i.postimg.cc/BZCm86jn/Uni2.jpg",
-        "scholarshipCategory": "Financial Need",
-        "universityLocation": {
-            "country": "United States",
-            "city": "Cambridge"
-        },
-        "applicationDeadline": "2024-08-15",
-        "subjectCategory": "Business and Economics",
-        "applicationFees": 25,
-        "rating": 4.7
+    "applicationDeadline": "2024-07-31",
+    "subjectCategory": "Science and Technology",
+    "applicationFees": 20,
+    "rating": 4.8,
+    "postDate": "2024-06-01",
+    "scholarshipDescription": "This scholarship is awarded to students demonstrating outstanding academic performance in Science and Technology fields."
+  },
+  {
+    "universityName": "Harvard University",
+    "universityImage": "https://i.postimg.cc/BZCm86jn/Uni2.jpg",
+    "scholarshipCategory": "Financial Need",
+    "universityLocation": {
+      "country": "United States",
+      "city": "Cambridge"
     },
-    {
-        "_id": 3,
-        "universityName": "Stanford University",
-        "universityImage": "https://i.postimg.cc/Dyj5gMdV/Uni3.jpg",
-        "scholarshipCategory": "STEM",
-        "universityLocation": {
-            "country": "United States",
-            "city": "Stanford"
-        },
-        "applicationDeadline": "2024-09-01",
-        "subjectCategory": "Engineering",
-        "applicationFees": 15,
-        "rating": 4.9
+    "applicationDeadline": "2024-08-15",
+    "subjectCategory": "Business and Economics",
+    "applicationFees": 25,
+    "rating": 4.7,
+    "postDate": "2024-05-20",
+    "scholarshipDescription": "Designed to assist students from low-income families who require financial assistance to pursue their education in Business and Economics."
+  },
+  {
+    "universityName": "Stanford University",
+    "universityImage": "https://i.postimg.cc/Dyj5gMdV/Uni3.jpg",
+    "scholarshipCategory": "STEM",
+    "universityLocation": {
+      "country": "United States",
+      "city": "Stanford"
     },
-    {
-        "_id": 4,
-        "universityName": "University of Melbourne",
-        "universityImage": "https://i.postimg.cc/BvDgJQWs/Uni4.jpg",
-        "scholarshipCategory": "Women in Technology",
-        "universityLocation": {
-            "country": "Australia",
-            "city": "Melbourne"
-        },
-        "applicationDeadline": "2024-07-20",
-        "subjectCategory": "Computer Science",
-        "applicationFees": 10,
-        "rating": 4.6
+    "applicationDeadline": "2024-09-01",
+    "subjectCategory": "Engineering",
+    "applicationFees": 15,
+    "rating": 4.9,
+    "postDate": "2024-04-10",
+    "scholarshipDescription": "For students pursuing degrees in STEM fields, particularly in Engineering, who have shown exceptional promise."
+  },
+  {
+    "universityName": "University of Melbourne",
+    "universityImage": "https://i.postimg.cc/BvDgJQWs/Uni4.jpg",
+    "scholarshipCategory": "Women in Technology",
+    "universityLocation": {
+      "country": "Australia",
+      "city": "Melbourne"
     },
-    {
-        "_id": 5,
-        "universityName": "University of Toronto",
-        "universityImage": "https://i.postimg.cc/fyWj7cVT/Uni5.jpg",
-        "scholarshipCategory": "Community Service",
-        "universityLocation": {
-            "country": "Canada",
-            "city": "Toronto"
-        },
-        "applicationDeadline": "2024-10-10",
-        "subjectCategory": "Social Sciences",
-        "applicationFees": 5,
-        "rating": 4.5
+    "applicationDeadline": "2024-07-20",
+    "subjectCategory": "Computer Science",
+    "applicationFees": 10,
+    "rating": 4.6,
+    "postDate": "2024-05-15",
+    "scholarshipDescription": "Encourages and supports women who are pursuing careers in technology and related fields."
+  },
+  {
+    "universityName": "University of Toronto",
+    "universityImage": "https://i.postimg.cc/fyWj7cVT/Uni5.jpg",
+    "scholarshipCategory": "Community Service",
+    "universityLocation": {
+      "country": "Canada",
+      "city": "Toronto"
     },
-    {
-        "_id": 6,
-        "universityName": "National University of Singapore",
-        "universityImage": "https://i.postimg.cc/hPj1f0F2/Uni6.jpg",
-        "scholarshipCategory": "First-Generation College Student",
-        "universityLocation": {
-            "country": "Singapore",
-            "city": "Singapore"
-        },
-        "applicationDeadline": "2024-08-25",
-        "subjectCategory": "Humanities",
-        "applicationFees": 0,
-        "rating": 4.4
+    "applicationDeadline": "2024-10-10",
+    "subjectCategory": "Social Sciences",
+    "applicationFees": 5,
+    "rating": 4.5,
+    "postDate": "2024-03-25",
+    "scholarshipDescription": "Recognizes students who have made significant contributions to their communities through volunteer work and service."
+  },
+  {
+    "universityName": "National University of Singapore",
+    "universityImage": "https://i.postimg.cc/hPj1f0F2/Uni6.jpg",
+    "scholarshipCategory": "First-Generation College Student",
+    "universityLocation": {
+      "country": "Singapore",
+      "city": "Singapore"
     },
-    {
-        "_id": 7,
-        "universityName": "National University of Singapore",
-        "universityImage": "https://i.postimg.cc/hPj1f0F2/Uni6.jpg",
-        "scholarshipCategory": "First-Generation College Student",
-        "universityLocation": {
-            "country": "Singapore",
-            "city": "Singapore"
-        },
-        "applicationDeadline": "2024-08-25",
-        "subjectCategory": "Humanities",
-        "applicationFees": 0,
-        "rating": 4.4
-    }
-    {
-        "_id": 8,
-        "universityName": "National University of Singapore",
-        "universityImage": "https://i.postimg.cc/hPj1f0F2/Uni6.jpg",
-        "scholarshipCategory": "First-Generation College Student",
-        "universityLocation": {
-            "country": "Singapore",
-            "city": "Singapore"
-        },
-        "applicationDeadline": "2024-08-25",
-        "subjectCategory": "Humanities",
-        "applicationFees": 0,
-        "rating": 4.4
-    }
+    "applicationDeadline": "2024-08-25",
+    "subjectCategory": "Humanities",
+    "applicationFees": 0,
+    "rating": 4.4,
+    "postDate": "2024-02-28",
+    "scholarshipDescription": "Supports students who are the first in their families to attend college, encouraging them to pursue their academic dreams."
+  },
+  {
+    "universityName": "University of Singapore",
+    "universityImage": "https://i.postimg.cc/hPj1f0F2/Uni6.jpg",
+    "scholarshipCategory": "First-Generation College Student",
+    "universityLocation": {
+      "country": "Singapore",
+      "city": "Singapore"
+    },
+    "applicationDeadline": "2024-07-25",
+    "subjectCategory": "Humanities",
+    "applicationFees": 10,
+    "rating": 4.4,
+    "postDate": "2024-06-01",
+    "scholarshipDescription": "Awarded to students with exceptional academic achievements and promise in Mathematics."
+  },
+  {
+    "universityName": "University of USA",
+    "universityImage": "https://i.postimg.cc/hPj1f0F2/Uni6.jpg",
+    "scholarshipCategory": "First-Generation College Student",
+    "universityLocation": {
+      "country": "America",
+      "city": "Virginia"
+    },
+    "applicationDeadline": "2024-09-25",
+    "subjectCategory": "Social Sciences",
+    "applicationFees": 20,
+    "rating": 4.4,
+    "postDate": "2024-04-05",
+    "scholarshipDescription": "Aimed at international students who demonstrate academic excellence and a commitment to cultural exchange."
+  },
+  {
+    "universityName": "University of New York",
+    "universityImage": "https://i.postimg.cc/hPj1f0F2/Uni6.jpg",
+    "scholarshipCategory": "First-Generation College Student",
+    "universityLocation": {
+      "country": "America",
+      "city": "New York"
+    },
+    "applicationDeadline": "2024-09-25",
+    "subjectCategory": "Political Science",
+    "applicationFees": 20,
+    "rating": 4.4,
+    "postDate": "2024-03-18",
+    "scholarshipDescription": "For students with outstanding research potential in Natural Sciences, providing financial support to pursue advanced research projects."
+  }
 ]
