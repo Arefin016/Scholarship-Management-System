@@ -8,6 +8,8 @@ import SignUp from "../pages/SignUp/SignUp"
 import PrivateRoute from "./PrivateRoute"
 import Secret from "../pages/Shared/Secret/Secret"
 import AllScholarShipDetailsPage from "../pages/AllScholarship/AllScholarShipDetailsPage"
+import Dashboard from "../Layout/Dashboard"
+import MyApplication from "../pages/Dashboard/MyApplication/MyApplication"
 
 export const router = createBrowserRouter([
   {
@@ -25,8 +27,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "AllScholarship/:id",
-        // element:<PrivateRoute><AllScholarShipDetailsPage></AllScholarShipDetailsPage></PrivateRoute>,
-        element:<AllScholarShipDetailsPage></AllScholarShipDetailsPage>,
+        element:<PrivateRoute><AllScholarShipDetailsPage></AllScholarShipDetailsPage></PrivateRoute>,
+        // element:<AllScholarShipDetailsPage></AllScholarShipDetailsPage>,
         loader: ({params}) => fetch(`http://localhost:5000/topScholarship/${params.id}`)
       },
       {
@@ -47,4 +49,14 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: 'dashboard',
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: 'myApplication',
+        element: <MyApplication></MyApplication>
+      }
+    ]
+  }
 ])

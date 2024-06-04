@@ -3,6 +3,7 @@ import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom"
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useSubmit from "../../hooks/useSubmit";
 
 const AllScholarShipDetailsPage = () => {
   const scholarShipDetails = useLoaderData();
@@ -10,17 +11,20 @@ const AllScholarShipDetailsPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const axiosSecure = useAxiosSecure();
+  const [, refetch] = useSubmit();
 
-  const handleAddSubmit = submit => {
+  const handleAddSubmit = () => {
     if(user && user.email){
-      // TODO: send submit item to the database
-      console.log(user.email, submit);
+      //send submit item to the database
       const submitItem = {
         applyId: _id,
         email: user.email,
         universityName,
         applicationFees,
-        universityImage
+        universityImage,
+        scholarshipCategory,
+        subjectCategory,
+        universityLocation
       }
       axiosSecure.post('/submits', submitItem)
       .then(res => {
@@ -33,6 +37,8 @@ const AllScholarShipDetailsPage = () => {
             showConfirmButton: false,
             timer: 1500
           });
+          //refetch the submit to update the submit 
+          refetch();
         }
       })
     }
@@ -86,7 +92,7 @@ const AllScholarShipDetailsPage = () => {
         <p className="font-medium">Desc: {scholarshipDescription}</p>
         <div className="mt-4">
           <button
-          onClick={() => handleAddSubmit(scholarShipDetails)}
+          onClick={handleAddSubmit}
           className="btn btn-success text-white">
             Apply Scholarship
           </button>

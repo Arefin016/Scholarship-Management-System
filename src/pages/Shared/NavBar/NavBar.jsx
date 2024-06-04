@@ -27,11 +27,12 @@ const NavBar = () => {
         <Link to="/secret">Secret</Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/dashboard/myApplication">
           <button className="btn">
             <FaAddressCard className="mr-2"></FaAddressCard>
             <div className="badge badge-secondary">+{submit.length}</div>
           </button>
+          {/* Dashboard */}
         </Link>
       </li>
     </>
