@@ -25,7 +25,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "AllScholarship/:id",
-        element:<PrivateRoute><AllScholarShipDetailsPage></AllScholarShipDetailsPage></PrivateRoute>,
+        // element:<PrivateRoute><AllScholarShipDetailsPage></AllScholarShipDetailsPage></PrivateRoute>,
+        element:<AllScholarShipDetailsPage></AllScholarShipDetailsPage>,
         loader: ({params}) => fetch(`http://localhost:5000/topScholarship/${params.id}`)
       },
       {

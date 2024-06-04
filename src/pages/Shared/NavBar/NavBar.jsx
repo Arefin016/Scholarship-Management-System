@@ -2,9 +2,12 @@ import { Link } from "react-router-dom"
 import logo from "../../../assets/home/ScholershipLogo.png"
 import { useContext } from "react"
 import { AuthContext } from "../../../providers/AuthProvider"
+import { FaAddressCard } from "react-icons/fa";
+import useSubmit from "../../../hooks/useSubmit";
 
 const NavBar = () => {
-  const { user, logOut } = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext);
+  const [submit] = useSubmit();
 
   const handleLogOut = () => {
     logOut()
@@ -23,12 +26,20 @@ const NavBar = () => {
       <li>
         <Link to="/secret">Secret</Link>
       </li>
+      <li>
+        <Link to="/">
+          <button className="btn">
+            <FaAddressCard className="mr-2"></FaAddressCard>
+            <div className="badge badge-secondary">+{submit.length}</div>
+          </button>
+        </Link>
+      </li>
     </>
   )
 
   return (
     <>
-      <div className="navbar pt-3 fixed z-10 bg-opacity-30 max-w-screen-xl bg-black text-white">
+      <div className="navbar pt-2 fixed z-10 bg-opacity-30 max-w-screen-xl bg-black text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

@@ -16,7 +16,7 @@ const AllScholarship = () => {
       <Helmet>
         <title>Scholar || All Scholarship</title>
       </Helmet>
-      <div className="text-center lg:pt-20 mt-5">
+      <div className="text-center lg:pt-32 pt-20">
         <input
           className="border border-black p-2"
           type="Search"

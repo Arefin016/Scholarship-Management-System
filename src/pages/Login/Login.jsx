@@ -10,6 +10,7 @@ const Login = () => {
   const locaton = useLocation()
 
   const from = locaton.state?.from?.pathname || "/"
+  console.log('state in the location login page', location.state)
 
   const handleLogin = (event) => {
     event.preventDefault()
