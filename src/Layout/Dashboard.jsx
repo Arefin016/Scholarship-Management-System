@@ -1,7 +1,11 @@
-import { FaAd, FaAddressBook,  FaHome, FaSearch, FaUser } from "react-icons/fa"
+import { FaAd, FaAddressBook, FaHome, FaSearch, FaUser } from "react-icons/fa"
 import { NavLink, Outlet } from "react-router-dom"
+import SectionTitle from "../components/SectionTitle/SectionTitle"
+import useSubmit from "../hooks/useSubmit"
 
 const Dashboard = () => {
+  //cart = submit
+  const [submit] = useSubmit();
   return (
     <div className="flex lg:flex-row flex-col">
       {/* dashboard side bar */}
@@ -16,7 +20,7 @@ const Dashboard = () => {
           <li>
             <NavLink to="/dashboard/myApplication">
               <FaAddressBook></FaAddressBook>
-              My Application
+              My Application ({submit.length})
             </NavLink>
           </li>
           <li>
@@ -25,7 +29,7 @@ const Dashboard = () => {
               My Review
             </NavLink>
           </li>
-          <div className="divider"></div> 
+          <div className="divider"></div>
           <li>
             <NavLink to="/">
               <FaHome></FaHome>
@@ -41,7 +45,8 @@ const Dashboard = () => {
         </ul>
       </div>
       {/* dashboard content */}
-      <div className="flex-1 p-2">
+      <div className="flex-1">
+        <SectionTitle heading={"My Application"}></SectionTitle>
         <Outlet></Outlet>
       </div>
     </div>
