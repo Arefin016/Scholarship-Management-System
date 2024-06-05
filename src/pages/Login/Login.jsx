@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async"
 import { AuthContext } from "../../providers/AuthProvider"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
+import SocialLogin from "../../components/SocialLogin/SocialLogin"
 
 const Login = () => {
   const { signIn } = useContext(AuthContext)
@@ -10,7 +11,7 @@ const Login = () => {
   const locaton = useLocation()
 
   const from = locaton.state?.from?.pathname || "/"
-  console.log('state in the location login page', location.state)
+  console.log("state in the location login page", location.state)
 
   const handleLogin = (event) => {
     event.preventDefault()
@@ -86,6 +87,7 @@ const Login = () => {
               <input className="btn btn-primary" type="submit" value="Login" />
             </div>
           </form>
+          
           <p className="text-center mb-2 font-medium">
             <small>
               New Here?{" "}
@@ -94,8 +96,10 @@ const Login = () => {
               </Link>
             </small>
           </p>
+          <SocialLogin></SocialLogin>
         </div>
       </div>
+      
     </div>
   )
 }
