@@ -10,6 +10,7 @@ import Secret from "../pages/Shared/Secret/Secret"
 import AllScholarShipDetailsPage from "../pages/AllScholarship/AllScholarShipDetailsPage"
 import Dashboard from "../Layout/Dashboard"
 import MyApplication from "../pages/Dashboard/MyApplication/MyApplication"
+import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers"
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +57,11 @@ export const router = createBrowserRouter([
       {
         path: 'myApplication',
         element: <MyApplication></MyApplication>
+      },
+      // admin routes
+      {
+        path: 'manageUsers',
+        element:<ManageUsers></ManageUsers>
       }
     ]
   }
