@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet-async"
 import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom"
-import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useSubmit from "../../hooks/useSubmit";
+import useAuth from "../../hooks/useAuth";
 
 const AllScholarShipDetailsPage = () => {
   const scholarShipDetails = useLoaderData();

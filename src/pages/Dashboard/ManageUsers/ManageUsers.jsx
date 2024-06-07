@@ -8,8 +8,8 @@ const ManageUsers = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/users")
-      return res.data
+      const res = await axiosSecure.get("/users");
+      return res.data;
     },
   })
 
@@ -30,22 +30,22 @@ const ManageUsers = () => {
     })
   }
 
-  const handleMakeModerator = user => {
-    axiosSecure.patch(`/users/moderator/${user._id}`)
-    .then(res => {
-        console.log(res.data)
-        if(res.data.modifiedCount > 0){
-            refetch();
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: `${user.name} is an Moderator Now!`,
-                showConfirmButton: false,
-                timer: 1500
-              });
-        }
-    })
-  }
+//   const handleMakeModerator = user => {
+//     axiosSecure.patch(`/users/moderator/${user._id}`)
+//     .then(res => {
+//         console.log(res.data)
+//         if(res.data.modifiedCount > 0){
+//             refetch();
+//             Swal.fire({
+//                 position: "top-end",
+//                 icon: "success",
+//                 title: `${user.name} is an Moderator Now!`,
+//                 showConfirmButton: false,
+//                 timer: 1500
+//               });
+//         }
+//     })
+//   }
 
 
 

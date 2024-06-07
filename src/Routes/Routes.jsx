@@ -11,6 +11,8 @@ import AllScholarShipDetailsPage from "../pages/AllScholarship/AllScholarShipDet
 import Dashboard from "../Layout/Dashboard"
 import MyApplication from "../pages/Dashboard/MyApplication/MyApplication"
 import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers"
+import AddScholarship from "../pages/Dashboard/AddScholarship/AddScholarship"
+import AdminRoute from "./AdminRoute"
 
 export const router = createBrowserRouter([
   {
@@ -28,9 +30,14 @@ export const router = createBrowserRouter([
       },
       {
         path: "AllScholarship/:id",
-        element:<PrivateRoute><AllScholarShipDetailsPage></AllScholarShipDetailsPage></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <AllScholarShipDetailsPage></AllScholarShipDetailsPage>
+          </PrivateRoute>
+        ),
         // element:<AllScholarShipDetailsPage></AllScholarShipDetailsPage>,
-        loader: ({params}) => fetch(`http://localhost:5000/topScholarship/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/topScholarship/${params.id}`),
       },
       {
         path: "login",
@@ -51,18 +58,27 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: 'dashboard',
-    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
     children: [
+      // normal user route
       {
-        path: 'myApplication',
-        element: <MyApplication></MyApplication>
+        path: "myApplication",
+        element: <MyApplication></MyApplication>,
       },
       // admin routes
       {
-        path: 'manageUsers',
-        element:<ManageUsers></ManageUsers>
+        path: "manageUsers",
+        element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>,
+      },
+      {
+        path: 'adminAddScholarship',
+        element: <AdminRoute><AddScholarship></AddScholarship></AdminRoute>
       }
-    ]
-  }
+    ],
+  },
 ])

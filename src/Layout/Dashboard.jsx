@@ -1,14 +1,14 @@
 import { FaAd, FaAddressBook, FaAddressCard, FaEnvelope, FaHome, FaSchool, FaSearch, FaStreetView, FaUser, } from "react-icons/fa"
 import { NavLink, Outlet } from "react-router-dom"
-import SectionTitle from "../components/SectionTitle/SectionTitle"
 import useSubmit from "../hooks/useSubmit"
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
   //cart = submit
   const [submit] = useSubmit();
 
   //TODO: get isAdmin value from the database
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
 
   return (
     <div className="flex lg:flex-row flex-col">
@@ -99,7 +99,7 @@ const Dashboard = () => {
         </ul>
       </div>
       {/* dashboard content */}
-      <div className="flex-1">
+      <div className="flex-1 p-2">
         <Outlet></Outlet>
       </div>
     </div>
