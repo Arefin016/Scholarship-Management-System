@@ -13,6 +13,8 @@ import MyApplication from "../pages/Dashboard/MyApplication/MyApplication"
 import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers"
 import AddScholarship from "../pages/Dashboard/AddScholarship/AddScholarship"
 import AdminRoute from "./AdminRoute"
+import ManageScholarship from "../pages/Dashboard/ManageScholarship/ManageScholarship"
+import UpdateScholarship from "../pages/Dashboard/UpdateScholarship/UpdateScholarship"
 
 export const router = createBrowserRouter([
   {
@@ -74,6 +76,15 @@ export const router = createBrowserRouter([
       {
         path: "manageUsers",
         element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>,
+      },
+      {
+        path: 'manageScholarship',
+        element: <AdminRoute><ManageScholarship></ManageScholarship></AdminRoute>
+      },
+      {
+        path:'updateScholarship/:id',
+        element:<AdminRoute><UpdateScholarship></UpdateScholarship></AdminRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/topScholarship/${params.id}`)
       },
       {
         path: 'adminAddScholarship',

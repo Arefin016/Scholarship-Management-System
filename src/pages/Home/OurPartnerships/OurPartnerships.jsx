@@ -15,22 +15,7 @@ const OurPartnerships = () => {
     <div>
       <SectionTitle heading={"Our Partnerships"}></SectionTitle>
 
-      <div className="">
-        {/* <div className="hero my-5">
-          <div className="hero-content flex-col lg:gap-32 lg:flex-row-reverse">
-            <img
-              src={banner}
-              className="rounded-lg shadow-2xl"
-            />
-            <div>
-              <h1 className="text-5xl font-bold">Microsoft!</h1>
-              <p className="py-6">
-              Our partnership with Honeywell is across turnkey implementations in smart city <br /> projects.
-              </p>
-              <button className="btn btn-outline">Explore More</button>
-            </div>
-          </div>
-        </div> */}
+      
         <div>
         <h2 className="text-2xl mb-2">More Partnerships</h2>
         <button className="btn btn-outline">Explore More</button>
@@ -51,8 +36,6 @@ const OurPartnerships = () => {
       </Swiper>
       </div>
       </div>
-      
-    </div>
   )
 }
 
