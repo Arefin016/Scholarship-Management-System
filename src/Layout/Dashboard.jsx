@@ -9,6 +9,7 @@ const Dashboard = () => {
 
   //TODO: get isAdmin value from the database
   const [isAdmin] = useAdmin();
+  // const [] = useAdmin();
 
   return (
     <div className="flex lg:flex-row flex-col">

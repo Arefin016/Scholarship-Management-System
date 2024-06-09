@@ -38,6 +38,7 @@ const AllScholarShipDetailsPage = () => {
             timer: 1500
           });
           //refetch the submit to update the submit 
+          navigate('/dashboard/myApplication', {state: {from: location}})
           refetch();
         }
       })

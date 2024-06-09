@@ -3,14 +3,16 @@ import useSubmit from "../../../hooks/useSubmit"
 import { TbListDetails } from "react-icons/tb"
 import Swal from "sweetalert2"
 import useAxiosSecure from "../../../hooks/useAxiosSecure"
+import { Link } from "react-router-dom"
 
 const MyApplication = () => {
   //cart =submit
   const [submit, refetch] = useSubmit()
-  const totalApplicationFees = submit.reduce(
+  const totalApplicationFees = parseInt(submit.reduce(
     (total, item) => total + item.applicationFees,
     0
-  )
+  ))
+  console.log(totalApplicationFees);
   const axiosSecure = useAxiosSecure()
 
   const handleDelete = (id) => {
@@ -26,7 +28,7 @@ const MyApplication = () => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/submits/${id}`).then((res) => {
           if (res.data.deletedCount > 0) {
-          refetch();
+            refetch()
             Swal.fire({
               title: "Deleted!",
               text: "Your file has been deleted.",
@@ -42,7 +44,15 @@ const MyApplication = () => {
       <div className="flex lg:justify-evenly flex-col lg:flex-row">
         <h2 className="text-4xl">Items: {submit.length}</h2>
         <h2 className="text-4xl">Total Price: {totalApplicationFees}</h2>
-        <button className="btn btn-success">Apply Scholarship</button>
+        {submit.length ? (
+          <Link to="/dashboard/payment">
+            <button className="btn btn-success">Apply Scholarship</button>
+          </Link>
+        ) : (
+          <button disabled className="btn btn-success">
+            Apply Scholarship
+          </button>
+        )}
       </div>
       <div className="overflow-x-auto">
         <table className="table">
@@ -87,7 +97,7 @@ const MyApplication = () => {
                   </button>
                 </th>
                 <th>
-                <button className="btn btn-ghost">Add Review</button>
+                  <button className="btn btn-ghost">Add Review</button>
                 </th>
               </tr>
             ))}

@@ -15,6 +15,7 @@ import AddScholarship from "../pages/Dashboard/AddScholarship/AddScholarship"
 import AdminRoute from "./AdminRoute"
 import ManageScholarship from "../pages/Dashboard/ManageScholarship/ManageScholarship"
 import UpdateScholarship from "../pages/Dashboard/UpdateScholarship/UpdateScholarship"
+import Payment from "../pages/Dashboard/Payment/Payment"
 
 export const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ export const router = createBrowserRouter([
       {
         path: "myApplication",
         element: <MyApplication></MyApplication>,
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>
       },
       // admin routes
       {
