@@ -28,11 +28,11 @@ const NavBar = () => {
       </li>
       <li>
         <Link to="/dashboard/myApplication">
-          <button className="btn">
+          {/* <button className="btn">
             <FaAddressCard className="mr-2"></FaAddressCard>
             <div className="badge badge-secondary">+{submit.length}</div>
-          </button>
-          {/* Dashboard */}
+          </button> */}
+          Dashboard
         </Link>
       </li>
     </>

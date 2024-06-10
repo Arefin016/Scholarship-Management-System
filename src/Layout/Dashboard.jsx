@@ -2,6 +2,7 @@ import { FaAd, FaAddressBook, FaAddressCard, FaEnvelope, FaHome, FaSchool, FaSea
 import { NavLink, Outlet } from "react-router-dom"
 import useSubmit from "../hooks/useSubmit"
 import useAdmin from "../hooks/useAdmin";
+// import useModerator from "../hooks/useModerator";
 
 const Dashboard = () => {
   //cart = submit
@@ -9,6 +10,7 @@ const Dashboard = () => {
 
   //TODO: get isAdmin value from the database
   const [isAdmin] = useAdmin();
+  // const [isModerator] = useModerator();
   // const [] = useAdmin();
 
   return (
@@ -83,6 +85,7 @@ const Dashboard = () => {
           </li>
             </>
           }
+         
           {/* shared nav links */}
           <div className="divider"></div>
           <li>

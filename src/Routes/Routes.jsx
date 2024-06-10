@@ -17,6 +17,8 @@ import ManageScholarship from "../pages/Dashboard/ManageScholarship/ManageSchola
 import UpdateScholarship from "../pages/Dashboard/UpdateScholarship/UpdateScholarship"
 import Payment from "../pages/Dashboard/Payment/Payment"
 import PaymentUserInformation from "../pages/Dashboard/PaymentUserInformation/PaymentUserInformation"
+import AdminProfile from "../pages/Dashboard/AdminProfile/AdminProfile"
+import MyProfile from "../pages/Dashboard/MyProfile/MyProfile"
 
 export const router = createBrowserRouter([
   {
@@ -79,6 +81,10 @@ export const router = createBrowserRouter([
         element: <Payment></Payment>
       },
       {
+        path: "myProfile",
+        element: <MyProfile></MyProfile>
+      },
+      {
         path: 'paymentUserInformation',
         element: <PaymentUserInformation></PaymentUserInformation>
       },
@@ -86,6 +92,10 @@ export const router = createBrowserRouter([
       {
         path: "manageUsers",
         element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>,
+      },
+      {
+        path: 'adminProfile',
+        element:<AdminRoute><AdminProfile></AdminProfile></AdminRoute>
       },
       {
         path: 'manageScholarship',

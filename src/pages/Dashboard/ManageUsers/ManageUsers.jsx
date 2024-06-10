@@ -30,22 +30,22 @@ const ManageUsers = () => {
     })
   }
 
-//   const handleMakeModerator = user => {
-//     axiosSecure.patch(`/users/moderator/${user._id}`)
-//     .then(res => {
-//         console.log(res.data)
-//         if(res.data.modifiedCount > 0){
-//             refetch();
-//             Swal.fire({
-//                 position: "top-end",
-//                 icon: "success",
-//                 title: `${user.name} is an Moderator Now!`,
-//                 showConfirmButton: false,
-//                 timer: 1500
-//               });
-//         }
-//     })
-//   }
+  const handleMakeModerator = user => {
+    axiosSecure.patch(`/users/moderator/${user._id}`)
+    .then(res => {
+        console.log(res.data)
+        if(res.data.modifiedCount > 0){
+            refetch();
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: `${user.name} is an Moderator Now!`,
+                showConfirmButton: false,
+                timer: 1500
+              });
+        }
+    })
+  }
 
 
 
@@ -97,15 +97,17 @@ const ManageUsers = () => {
                 <th>{index + 1}</th>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
-                <td>
-                  <details className="dropdown">
-                    <summary  className="m-1 btn btn-xs bg-blue-400"><FaUser></FaUser></summary>
-                    {user.role === 'admin' ? 'Admin' : <ul className="shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52"> 
-                      <li onClick={() => handleMakeAdmin(user)}>
-                        <a>Admin</a>
-                      </li>
-                    </ul>}
-                  </details>
+                <td className="space-x-2">
+                  {user.role === 'admin' ? 'Admin' :<button
+                  onClick={() => handleMakeAdmin(user)}
+                  className="btn btn-sm bg-orange-500">
+                    <FaUser className="text-white"></FaUser>
+                  </button>}
+                  {user.role === 'moderator' ? 'Moderator' :<button
+                  onClick={() => handleMakeModerator(user)}
+                  className="btn btn-sm bg-orange-500">
+                    <FaUser className="text-white"></FaUser>
+                  </button>}
                 </td>
                 <td>
                   <button
