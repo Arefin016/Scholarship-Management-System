@@ -16,6 +16,7 @@ import AdminRoute from "./AdminRoute"
 import ManageScholarship from "../pages/Dashboard/ManageScholarship/ManageScholarship"
 import UpdateScholarship from "../pages/Dashboard/UpdateScholarship/UpdateScholarship"
 import Payment from "../pages/Dashboard/Payment/Payment"
+import PaymentUserInformation from "../pages/Dashboard/PaymentUserInformation/PaymentUserInformation"
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,7 @@ export const router = createBrowserRouter([
       {
         path: "AllScholarship",
         element: <AllScholarship></AllScholarship>,
+        loader: () => fetch('http://localhost:5000/topScholarshipCount')
       },
       {
         path: "AllScholarship/:id",
@@ -38,7 +40,6 @@ export const router = createBrowserRouter([
             <AllScholarShipDetailsPage></AllScholarShipDetailsPage>
           </PrivateRoute>
         ),
-        // element:<AllScholarShipDetailsPage></AllScholarShipDetailsPage>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/topScholarship/${params.id}`),
       },
@@ -76,6 +77,10 @@ export const router = createBrowserRouter([
       {
         path: "payment",
         element: <Payment></Payment>
+      },
+      {
+        path: 'paymentUserInformation',
+        element: <PaymentUserInformation></PaymentUserInformation>
       },
       // admin routes
       {

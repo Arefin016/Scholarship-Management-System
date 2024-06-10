@@ -8,10 +8,10 @@ import { Link } from "react-router-dom"
 const MyApplication = () => {
   //cart =submit
   const [submit, refetch] = useSubmit()
-  const totalApplicationFees = parseInt(submit.reduce(
-    (total, item) => total + item.applicationFees,
+  const totalApplicationFees = submit.reduce(
+    (total, item) => total + parseInt(item.applicationFees),
     0
-  ))
+  )
   console.log(totalApplicationFees);
   const axiosSecure = useAxiosSecure()
 

@@ -75,6 +75,12 @@ const Dashboard = () => {
               My Review
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/dashboard/paymentUserInformation">
+              <FaAd></FaAd>
+              Payment User Information
+            </NavLink>
+          </li>
             </>
           }
           {/* shared nav links */}

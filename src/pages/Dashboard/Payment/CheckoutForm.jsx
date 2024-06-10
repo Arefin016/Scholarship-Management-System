@@ -10,21 +10,27 @@ const CheckoutForm = () => {
   const [error, setError] = useState("")
   const navigate = useNavigate();
   const location = useLocation();
-  const [clientSecret , setClientSecret] = useState('');
+  const [transactionId, setTransactionId] = useState("")
+  const [clientSecret, setClientSecret] = useState("")
   const stripe = useStripe()
-  const elements = useElements();
-  const axiosSecure = useAxiosSecure();
-  const {user} = useAuth();
-  const[submit] = useSubmit();
-  const totalApplicationFees = submit.reduce( (total, item) => total + item.applicationFees, 0)
+  const elements = useElements()
+  const axiosSecure = useAxiosSecure()
+  const { user } = useAuth()
+  const [submit, refetch] = useSubmit()
+  const totalApplicationFees = submit.reduce(
+    (total, item) => total + parseInt(item.applicationFees),
+    0
+  )
 
-
-  useEffect( () => {
-     axiosSecure.post('/create-payment-intent', {price: totalApplicationFees})
-     .then(res => {
-        console.log(res.data.clientSecret);
-        setClientSecret(res.data.clientSecret);
-     })
+  useEffect(() => {
+    if (totalApplicationFees > 0) {
+      axiosSecure
+        .post("/create-payment-intent", { price: totalApplicationFees })
+        .then((res) => {
+          console.log(res.data.clientSecret)
+          setClientSecret(res.data.clientSecret)
+        })
+    }
   }, [axiosSecure, totalApplicationFees])
 
   const handleSubmit = async (event) => {
@@ -49,35 +55,53 @@ const CheckoutForm = () => {
       setError(error.message)
     } else {
       console.log("payment method", paymentMethod)
-      setError('');
+      setError("")
     }
 
-    //confirm payment 
-    const {paymentIntent, error: confirmError} = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: {
-        card:  card,
-        billing_details: {
-           email: user?.email || 'anonymous',
-           name: user?.displayName || "anonymous"
+    //confirm payment
+    const { paymentIntent, error: confirmError } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            email: user?.email || "anonymous",
+            name: user?.displayName || "anonymous",
+          },
+        },
+      })
+    if (confirmError) {
+      console.log("confirm error")
+    } else {
+      console.log("payment intent", paymentIntent)
+      if (paymentIntent.status === "succeeded") {
+        console.log("transaction id", paymentIntent.id)
+        setTransactionId(paymentIntent.id)
+
+        // now the save the payment
+        const payment = {
+          email: user.email,
+          price: totalApplicationFees,
+          transactionId: paymentIntent.id,
+          date: new Date(),
+          submitIds: submit.map((item) => item._id),
+          applyIds: submit.map((item) => item.applyId),
+          status: "pending",
         }
-      }
-    })
-    if(confirmError){
-      console.log('confirm error')
-    }
-    else{
-      console.log('payment intent',paymentIntent)
-      if(paymentIntent.status === "succeeded"){
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Payment Successfully",
-          showConfirmButton: false,
-          timer: 1500
-        });
-          //
-          navigate('/', {state: {from: location}})
+        const res = await axiosSecure.post("/payments", payment)
+        // console.log("payment saved", res.data);
+        refetch();
 
+        if(res.data?.paymentResult?.insertedId){
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Payment Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          })
+        }
+        //
+        navigate('/', {state: {from: location}})
       }
     }
   }
@@ -107,11 +131,10 @@ const CheckoutForm = () => {
       >
         Pay
       </button>
-      <div className="toast toast-center toast-middle">
-        <div className="alert alert-info">
-          <span>{error}</span>
-        </div>
-      </div>
+      {error && <p className="text-red-600">The error is : {error}</p>}
+      {transactionId && (
+        <p className="text-green-600">Your transaction id: {transactionId}</p>
+      )}
     </form>
   )
 }
