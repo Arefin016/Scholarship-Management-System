@@ -82,7 +82,7 @@ const MyApplication = () => {
                 </td>
                 <td>{item.subjectCategory}</td>
                 <td>${item.applicationFees}</td>
-                <th>
+                <td>
                   <button className="btn btn-ghost btn-xs">
                     <TbListDetails></TbListDetails>
                   </button>
@@ -95,10 +95,12 @@ const MyApplication = () => {
                   >
                     <FaTrashAlt className="text-red-600"></FaTrashAlt>
                   </button>
-                </th>
-                <th>
+                </td>
+                <td>
+                  <Link to={`/dashboard/addReview/${item._id}`}>
                   <button className="btn btn-ghost">Add Review</button>
-                </th>
+                  </Link>
+                </td>
               </tr>
             ))}
           </tbody>

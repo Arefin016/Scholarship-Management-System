@@ -19,6 +19,8 @@ import Payment from "../pages/Dashboard/Payment/Payment"
 import PaymentUserInformation from "../pages/Dashboard/PaymentUserInformation/PaymentUserInformation"
 import AdminProfile from "../pages/Dashboard/AdminProfile/AdminProfile"
 import MyProfile from "../pages/Dashboard/MyProfile/MyProfile"
+import AddReview from "../pages/Dashboard/AddReview/AddReview"
+import MyReview from "../pages/Dashboard/MyReview/MyReview"
 
 export const router = createBrowserRouter([
   {
@@ -81,8 +83,16 @@ export const router = createBrowserRouter([
         element: <Payment></Payment>
       },
       {
+        path: 'addReview/:id',
+        element:<AddReview></AddReview>
+      },
+      {
         path: "myProfile",
         element: <MyProfile></MyProfile>
+      },
+      {
+        path:'myReview',
+        element:<MyReview></MyReview>
       },
       {
         path: 'paymentUserInformation',

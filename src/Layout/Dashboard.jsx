@@ -3,6 +3,7 @@ import { NavLink, Outlet } from "react-router-dom"
 import useSubmit from "../hooks/useSubmit"
 import useAdmin from "../hooks/useAdmin";
 // import useModerator from "../hooks/useModerator";
+// import useUser from "../hooks/useUser";
 
 const Dashboard = () => {
   //cart = submit
@@ -11,7 +12,7 @@ const Dashboard = () => {
   //TODO: get isAdmin value from the database
   const [isAdmin] = useAdmin();
   // const [isModerator] = useModerator();
-  // const [] = useAdmin();
+  // const [isUser] = useUser(); 
 
   return (
     <div className="flex lg:flex-row flex-col">
@@ -19,7 +20,7 @@ const Dashboard = () => {
       <div className="w-56 min-h-screen bg-gray-300">
         <ul className="menu p-4">
           {
-            isAdmin ? <>
+            isAdmin ?  <>
             <li>
             <NavLink to="/dashboard/adminProfile">
               <FaUser></FaUser>
@@ -59,7 +60,7 @@ const Dashboard = () => {
             </>
             :
             <>
-            <li>
+               <li>
             <NavLink to="/dashboard/myProfile">
               <FaUser></FaUser>
               My Profile
@@ -85,6 +86,67 @@ const Dashboard = () => {
           </li>
             </>
           }
+          {
+            // isModerator && 
+          //    <>
+          //   {/* <li>
+          //   <NavLink to="/dashboard/myProfile">
+          //     <FaUser></FaUser>
+          //     My Profile
+          //   </NavLink>
+          // </li>
+          // <li>
+          //   <NavLink to="/dashboard/myApplication">
+          //     <FaAddressBook></FaAddressBook>
+          //     My Application ({submit.length})
+          //   </NavLink>
+          // </li>
+          // <li>
+          //   <NavLink to="/dashboard/myReview">
+          //     <FaAd></FaAd>
+          //     My Review
+          //   </NavLink>
+          // </li> */}
+          // <li>
+          //   <NavLink to="/dashboard/paymentUserInformation">
+          //     <FaAd></FaAd>
+          //     Payment User Information
+          //   </NavLink>
+          // </li>
+          //   </>
+          }
+          {/* {
+            !isAdmin || !isModerator ?
+            <>
+               <li>
+            <NavLink to="/dashboard/myProfile">
+              <FaUser></FaUser>
+              My Profile
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/myApplication">
+              <FaAddressBook></FaAddressBook>
+              My Application ({submit.length})
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/myReview">
+              <FaAd></FaAd>
+              My Review
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/paymentUserInformation">
+              <FaAd></FaAd>
+              Payment User Information
+            </NavLink>
+          </li>
+            </>
+            :
+            <>
+            </>
+          } */}
          
           {/* shared nav links */}
           <div className="divider"></div>
