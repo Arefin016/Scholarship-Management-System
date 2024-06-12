@@ -119,6 +119,10 @@ export const router = createBrowserRouter([
       {
         path: 'adminAddScholarship',
         element: <AdminRoute><AddScholarship></AddScholarship></AdminRoute>
+      },
+      //moderator routes
+      {
+        
       }
     ],
   },

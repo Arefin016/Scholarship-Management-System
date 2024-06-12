@@ -1,119 +1,167 @@
-import { FaAd, FaAddressBook, FaAddressCard, FaEnvelope, FaHome, FaSchool, FaSearch, FaStreetView, FaUser, } from "react-icons/fa"
+import {
+  FaAd,
+  FaAddressBook,
+  FaAddressCard,
+  FaEnvelope,
+  FaHome,
+  FaSchool,
+  FaSearch,
+  FaStreetView,
+  FaUser,
+} from "react-icons/fa"
 import { NavLink, Outlet } from "react-router-dom"
 import useSubmit from "../hooks/useSubmit"
-import useAdmin from "../hooks/useAdmin";
-// import useModerator from "../hooks/useModerator";
-// import useUser from "../hooks/useUser";
+import useAdmin from "../hooks/useAdmin"
+import useModerator from "../hooks/useModerator"
 
 const Dashboard = () => {
   //cart = submit
-  const [submit] = useSubmit();
+  const [submit] = useSubmit()
 
   //TODO: get isAdmin value from the database
-  const [isAdmin] = useAdmin();
-  // const [isModerator] = useModerator();
-  // const [isUser] = useUser(); 
+  const [isAdmin] = useAdmin()
+  const [isModerator] = useModerator()
+  // const [isUser] = useUser();
 
   return (
     <div className="flex lg:flex-row flex-col">
       {/* dashboard side bar */}
       <div className="w-56 min-h-screen bg-gray-300">
         <ul className="menu p-4">
-          {
-            isAdmin ?  <>
-            <li>
-            <NavLink to="/dashboard/adminProfile">
-              <FaUser></FaUser>
-              Admin Profile
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/adminAddScholarship">
-              <FaAddressBook></FaAddressBook>
-              Add Scholarship
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/manageScholarship">
-              <FaSchool></FaSchool>
-              Manage Scholarship
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/manageAppliedScholarship">
-              <FaAddressCard></FaAddressCard>
-              Manage Applied Application
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/manageUsers">
-              <FaUser></FaUser>
-              Manage Users
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/manageReview">
-              <FaStreetView></FaStreetView>
-              Manage Review
-            </NavLink>
-          </li>
-            </>
-            :
+          {/* Routes for normal user */}
+          {!isAdmin && !isModerator && (
             <>
-               <li>
-            <NavLink to="/dashboard/myProfile">
-              <FaUser></FaUser>
-              My Profile
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/myApplication">
-              <FaAddressBook></FaAddressBook>
-              My Application ({submit.length})
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/myReview">
-              <FaAd></FaAd>
-              My Review
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/paymentUserInformation">
-              <FaAd></FaAd>
-              Payment User Information
-            </NavLink>
-          </li>
+              <li>
+                <NavLink to="/dashboard/myProfile">
+                  <FaUser></FaUser>
+                  My Profile
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/myApplication">
+                  <FaAddressBook></FaAddressBook>
+                  My Application ({submit.length})
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/myReview">
+                  <FaAd></FaAd>
+                  My Review
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/paymentUserInformation">
+                  <FaAd></FaAd>
+                  Payment User Information
+                </NavLink>
+              </li>
             </>
-          }
+          )}
+          {/* Routes for moderators */}
+          {isModerator && (
+            <>
+              <li>
+                <NavLink to="/dashboard/moderatorProfile">
+                  <FaUser></FaUser>
+                  Moderator Profile
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/manageScholarship">
+                  <FaSchool></FaSchool>
+                  Manage Scholarships
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/allReviews">
+                  <FaStreetView></FaStreetView>
+                  All Reviews
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/allReviews">
+                  <FaSchool></FaSchool>
+                  All Applied Scholarship
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/allReviews">
+                  <FaAddressBook></FaAddressBook>
+                  Add Scholarship
+                </NavLink>
+              </li>
+            </>
+          )}
+          {/* Routes for admins */}
+          {isAdmin && (
+            <>
+              <li>
+                <NavLink to="/dashboard/adminProfile">
+                  <FaUser></FaUser>
+                  Admin Profile
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/adminAddScholarship">
+                  <FaAddressBook></FaAddressBook>
+                  Add Scholarship
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/manageScholarship">
+                  <FaSchool></FaSchool>
+                  Manage Scholarship
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/manageAppliedScholarship">
+                  <FaAddressCard></FaAddressCard>
+                  Manage Applied Application
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/manageUsers">
+                  <FaUser></FaUser>
+                  Manage Users
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/manageReview">
+                  <FaStreetView></FaStreetView>
+                  Manage Review
+                </NavLink>
+              </li>
+            </>
+          )}
+
           {
-            // isModerator && 
-          //    <>
-          //   {/* <li>
-          //   <NavLink to="/dashboard/myProfile">
-          //     <FaUser></FaUser>
-          //     My Profile
-          //   </NavLink>
-          // </li>
-          // <li>
-          //   <NavLink to="/dashboard/myApplication">
-          //     <FaAddressBook></FaAddressBook>
-          //     My Application ({submit.length})
-          //   </NavLink>
-          // </li>
-          // <li>
-          //   <NavLink to="/dashboard/myReview">
-          //     <FaAd></FaAd>
-          //     My Review
-          //   </NavLink>
-          // </li> */}
-          // <li>
-          //   <NavLink to="/dashboard/paymentUserInformation">
-          //     <FaAd></FaAd>
-          //     Payment User Information
-          //   </NavLink>
-          // </li>
-          //   </>
+            // isModerator &&
+            //    <>
+            //   {/* <li>
+            //   <NavLink to="/dashboard/myProfile">
+            //     <FaUser></FaUser>
+            //     My Profile
+            //   </NavLink>
+            // </li>
+            // <li>
+            //   <NavLink to="/dashboard/myApplication">
+            //     <FaAddressBook></FaAddressBook>
+            //     My Application ({submit.length})
+            //   </NavLink>
+            // </li>
+            // <li>
+            //   <NavLink to="/dashboard/myReview">
+            //     <FaAd></FaAd>
+            //     My Review
+            //   </NavLink>
+            // </li> */}
+            // <li>
+            //   <NavLink to="/dashboard/paymentUserInformation">
+            //     <FaAd></FaAd>
+            //     Payment User Information
+            //   </NavLink>
+            // </li>
+            //   </>
           }
           {/* {
             !isAdmin || !isModerator ?
@@ -147,7 +195,7 @@ const Dashboard = () => {
             <>
             </>
           } */}
-         
+
           {/* shared nav links */}
           <div className="divider"></div>
           <li>
