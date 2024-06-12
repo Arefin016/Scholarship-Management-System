@@ -4,6 +4,7 @@ import useReview from "../../../hooks/useReview"
 import { FaEdit, FaTrashAlt } from "react-icons/fa"
 import Swal from "sweetalert2"
 import useAxiosSecure from "../../../hooks/useAxiosSecure"
+import { Link } from "react-router-dom"
 
 const MyReview = () => {
   const [addReview, ,refetch] = useReview();
@@ -44,8 +45,8 @@ const MyReview = () => {
   return (
     <div>
       <SectionTitle heading={"My Review"}></SectionTitle>
-      <div className="overflow-x-auto">
-        <table className="table">
+      <div className="overflow-x-auto w-full">
+        <table className="table w-full">
           {/* head */}
           <thead>
             <tr>
@@ -69,12 +70,15 @@ const MyReview = () => {
                 <td>{item.reviewDate}</td>
                 <td>
                 <td>
-                  <button className="btn btn-ghost btn-xs">
+                  {/* <button className="btn btn-ghost btn-xs">
                     <TbListDetails></TbListDetails>
-                  </button>
+                  </button> */}
+                  {/* virat@kholi.com */}
+                  <Link to={`/dashboard/updateReview/${item._id}`}>
                   <button className="btn btn-ghost btn-xs">
                     <FaEdit></FaEdit>
                   </button>
+                  </Link>
                   <button
                     onClick={() => handleDeleteReview(item)}
                     className="btn btn-ghost btn-xs"

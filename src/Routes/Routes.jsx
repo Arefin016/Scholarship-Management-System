@@ -21,6 +21,13 @@ import AdminProfile from "../pages/Dashboard/AdminProfile/AdminProfile"
 import MyProfile from "../pages/Dashboard/MyProfile/MyProfile"
 import AddReview from "../pages/Dashboard/AddReview/AddReview"
 import MyReview from "../pages/Dashboard/MyReview/MyReview"
+import ModeratorProfile from "../pages/Dashboard/ModeratorProfile/ModeratorProfile"
+import ModeratorRoute from "./ModeratorRoute"
+import ModeratorManageScho from "../pages/Dashboard/ModeratorManageScho/ModeratorManageScho"
+import AllReviews from "../pages/Dashboard/AllReviews/AllReviews"
+import AllAppliedScholarship from "../pages/Dashboard/AllAppliedScholarship/AllAppliedScholarship"
+import ModeratorAddScholarship from "../pages/Dashboard/ModeratorAddScholarship/ModeratorAddScholarship"
+import UpdateReview from "../pages/Dashboard/UpdateReview/UpdateReview"
 
 export const router = createBrowserRouter([
   {
@@ -91,6 +98,11 @@ export const router = createBrowserRouter([
         element: <MyProfile></MyProfile>
       },
       {
+        path: 'updateReview/:id',
+        element:<UpdateReview></UpdateReview>,
+        loader: ({params}) => fetch(`http://localhost:5000/addReview/${params.id}`)
+      },
+      {
         path:'myReview',
         element:<MyReview></MyReview>
       },
@@ -122,7 +134,25 @@ export const router = createBrowserRouter([
       },
       //moderator routes
       {
-        
+        path: 'moderatorProfile',
+        element: <ModeratorRoute><ModeratorProfile></ModeratorProfile></ModeratorRoute>
+
+      },
+      {
+        path: 'moderatorManageScholarship',
+        element: <ModeratorRoute><ModeratorManageScho></ModeratorManageScho></ModeratorRoute>
+      },
+      {
+        path: 'allReviews',
+        element: <ModeratorRoute><AllReviews></AllReviews></ModeratorRoute>
+      },
+      {
+        path: 'allAppliedScholarship',
+        element: <ModeratorRoute><AllAppliedScholarship></AllAppliedScholarship></ModeratorRoute>
+      },
+      {
+        path: 'addScholarship',
+        element: <ModeratorRoute><ModeratorAddScholarship></ModeratorAddScholarship></ModeratorRoute>
       }
     ],
   },

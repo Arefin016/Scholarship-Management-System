@@ -67,7 +67,7 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/manageScholarship">
+                <NavLink to="/dashboard/moderatorManageScholarship">
                   <FaSchool></FaSchool>
                   Manage Scholarships
                 </NavLink>
@@ -79,13 +79,13 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/allReviews">
+                <NavLink to="/dashboard/allAppliedScholarship">
                   <FaSchool></FaSchool>
                   All Applied Scholarship
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/allReviews">
+                <NavLink to="/dashboard/addScholarship">
                   <FaAddressBook></FaAddressBook>
                   Add Scholarship
                 </NavLink>
