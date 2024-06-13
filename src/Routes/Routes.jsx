@@ -28,6 +28,7 @@ import AllReviews from "../pages/Dashboard/AllReviews/AllReviews"
 import AllAppliedScholarship from "../pages/Dashboard/AllAppliedScholarship/AllAppliedScholarship"
 import ModeratorAddScholarship from "../pages/Dashboard/ModeratorAddScholarship/ModeratorAddScholarship"
 import UpdateReview from "../pages/Dashboard/UpdateReview/UpdateReview"
+import AdminManageAllScholarship from "../pages/Dashboard/AdminManageAllScholarship/AdminManageAllScholarship"
 
 export const router = createBrowserRouter([
   {
@@ -131,6 +132,10 @@ export const router = createBrowserRouter([
       {
         path: 'adminAddScholarship',
         element: <AdminRoute><AddScholarship></AddScholarship></AdminRoute>
+      },
+      {
+        path: 'manageAppliedScholarship',
+        element: <AdminRoute><AdminManageAllScholarship></AdminManageAllScholarship></AdminRoute>
       },
       //moderator routes
       {
