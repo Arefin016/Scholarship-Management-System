@@ -30,6 +30,8 @@ import ModeratorAddScholarship from "../pages/Dashboard/ModeratorAddScholarship/
 import UpdateReview from "../pages/Dashboard/UpdateReview/UpdateReview"
 import AdminManageAllScholarship from "../pages/Dashboard/AdminManageAllScholarship/AdminManageAllScholarship"
 import ModeratorUpdateScho from "../pages/Dashboard/ModeratorUpdateScho/ModeratorUpdateScho"
+import AdminManageReview from "../pages/Dashboard/AdminManageReview/AdminManageReview"
+// import AdminUpdateReview from "../pages/Dashboard/AdminUpdateReview/AdminUpdateReview"
 
 export const router = createBrowserRouter([
   {
@@ -138,6 +140,16 @@ export const router = createBrowserRouter([
         path: 'manageAppliedScholarship',
         element: <AdminRoute><AdminManageAllScholarship></AdminManageAllScholarship></AdminRoute>
       },
+      {
+        path: 'adminManageReview',
+        element: <AdminRoute><AdminManageReview></AdminManageReview></AdminRoute>
+      },
+      // {
+      //   path: 'adminUpdateReview/:id',
+      //   element: <AdminRoute><AdminUpdateReview></AdminUpdateReview></AdminRoute>,
+      //   loader: ({params}) => fetch(`http://localhost:5000/addReview/${params.id}`)
+      // },
+      
       //moderator routes
       {
         path: 'moderatorProfile',

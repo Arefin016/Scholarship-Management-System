@@ -1,4 +1,4 @@
-import { TbListDetails } from "react-icons/tb"
+// import { TbListDetails } from "react-icons/tb"
 import SectionTitle from "../../../components/SectionTitle/SectionTitle"
 import useReview from "../../../hooks/useReview"
 import { FaEdit, FaTrashAlt } from "react-icons/fa"
