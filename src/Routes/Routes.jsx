@@ -29,6 +29,7 @@ import AllAppliedScholarship from "../pages/Dashboard/AllAppliedScholarship/AllA
 import ModeratorAddScholarship from "../pages/Dashboard/ModeratorAddScholarship/ModeratorAddScholarship"
 import UpdateReview from "../pages/Dashboard/UpdateReview/UpdateReview"
 import AdminManageAllScholarship from "../pages/Dashboard/AdminManageAllScholarship/AdminManageAllScholarship"
+import ModeratorUpdateScho from "../pages/Dashboard/ModeratorUpdateScho/ModeratorUpdateScho"
 
 export const router = createBrowserRouter([
   {
@@ -141,6 +142,12 @@ export const router = createBrowserRouter([
       {
         path: 'moderatorProfile',
         element: <ModeratorRoute><ModeratorProfile></ModeratorProfile></ModeratorRoute>
+
+      },
+      {
+        path: 'moderatorUpdateScholarship/:id',
+        element: <ModeratorRoute><ModeratorUpdateScho></ModeratorUpdateScho></ModeratorRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/topScholarship/${params.id}`)
 
       },
       {

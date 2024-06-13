@@ -10,7 +10,7 @@ const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
 
 const ModeratorAddScholarship = () => {
-    const { register, handleSubmit, reset } = useForm()
+    const { register, handleSubmit } = useForm()
     const axiosPublic = useAxiosPublic()
     const axiosSecure = useAxiosSecure()
 
@@ -24,6 +24,7 @@ const ModeratorAddScholarship = () => {
             "content-type": "multipart/form-data",
           },
         })
+        console.log(res);
         if (res.data.success) {
           //now send the add scholarship item data to the server
           const addScholarShipItem = {
@@ -44,13 +45,13 @@ const ModeratorAddScholarship = () => {
           }
           //
           const addScholarshipRes = await axiosSecure.post(
-            "/addScholarship",
+            "/moderatorAddScholarship",
             addScholarShipItem
           )
           console.log(addScholarshipRes.data)
           if (addScholarshipRes.data.insertedId) {
             // show success popup
-            reset();
+            // reset();
             Swal.fire({
               position: "top-end",
               icon: "success",
