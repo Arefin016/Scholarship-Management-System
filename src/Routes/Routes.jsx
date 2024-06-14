@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
       {
         path: "AllScholarship",
         element: <AllScholarship></AllScholarship>,
-        loader: () => fetch('http://localhost:5000/topScholarshipCount')
+        loader: () => fetch('https://scholarship-management-system-server-chi.vercel.app/topScholarshipCount')
       },
       {
         path: "AllScholarship/:id",
@@ -56,7 +56,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/topScholarship/${params.id}`),
+          fetch(`https://scholarship-management-system-server-chi.vercel.app/topScholarship/${params.id}`),
       },
       {
         path: "login",
@@ -104,7 +104,7 @@ export const router = createBrowserRouter([
       {
         path: 'updateReview/:id',
         element:<UpdateReview></UpdateReview>,
-        loader: ({params}) => fetch(`http://localhost:5000/addReview/${params.id}`)
+        loader: ({params}) => fetch(`https://scholarship-management-system-server-chi.vercel.app/addReview/${params.id}`)
       },
       {
         path:'myReview',
@@ -130,7 +130,7 @@ export const router = createBrowserRouter([
       {
         path:'updateScholarship/:id',
         element:<AdminRoute><UpdateScholarship></UpdateScholarship></AdminRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/topScholarship/${params.id}`)
+        loader: ({params}) => fetch(`https://scholarship-management-system-server-chi.vercel.app/topScholarship/${params.id}`)
       },
       {
         path: 'adminAddScholarship',
@@ -147,7 +147,7 @@ export const router = createBrowserRouter([
       // {
       //   path: 'adminUpdateReview/:id',
       //   element: <AdminRoute><AdminUpdateReview></AdminUpdateReview></AdminRoute>,
-      //   loader: ({params}) => fetch(`http://localhost:5000/addReview/${params.id}`)
+      //   loader: ({params}) => fetch(`https://scholarship-management-system-server-chi.vercel.app/addReview/${params.id}`)
       // },
       
       //moderator routes
@@ -159,7 +159,7 @@ export const router = createBrowserRouter([
       {
         path: 'moderatorUpdateScholarship/:id',
         element: <ModeratorRoute><ModeratorUpdateScho></ModeratorUpdateScho></ModeratorRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/topScholarship/${params.id}`)
+        loader: ({params}) => fetch(`https://scholarship-management-system-server-chi.vercel.app/topScholarship/${params.id}`)
 
       },
       {

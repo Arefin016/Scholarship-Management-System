@@ -3,10 +3,10 @@
 Welcome to the Scholarship Management System, a comprehensive platform designed to manage scholarships efficiently and effectively. 
 
 ## Live Site URL
-[Visit the Scholarship Management System](http://www.yourlivesiteurl.com)
+[Visit the Scholarship Management System](https://b9-a12-scholarship.web.app/)
 
 ## Admin Credentials
-- **Username:** shaharefinahmed@gmail.com
+- **Username:** water@melon.com
 - **Password:** 123456Aa@
 
 ## Features
@@ -52,7 +52,7 @@ Welcome to the Scholarship Management System, a comprehensive platform designed 
 
 ## Getting Started
 
-To get started with the Scholarship Management System, visit the [live site](http://www.yourlivesiteurl.com) and create an account. Admins can log in using the credentials provided above to manage scholarships and applications.
+To get started with the Scholarship Management System, visit the [live site](https://b9-a12-scholarship.web.app/) and create an account. Admins can log in using the credentials provided above to manage scholarships and applications.
 
 ## Contributing
 

@@ -10,7 +10,7 @@ const useApply = () => {
   //   const [loading, setLoading] = useState(true)
 
   //   useEffect(() => {
-  //     fetch("http://localhost:5000/topScholarship")
+  //     fetch("https://scholarship-management-system-server-chi.vercel.app/topScholarship")
   //       .then((res) => res.json())
   //       .then((data) => {
   //         setApply(data)

@@ -19,7 +19,7 @@ const useAllApply = () => {
   // const [loading, setLoading] = useState(true)
 
   // useEffect(() => {
-  //   fetch("http://localhost:5000/submits")
+  //   fetch("https://scholarship-management-system-server-chi.vercel.app/submits")
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setApplies(data)

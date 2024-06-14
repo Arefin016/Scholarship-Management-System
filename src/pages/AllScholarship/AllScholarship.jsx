@@ -19,7 +19,7 @@ const AllScholarship = () => {
    */
 
   useEffect(() => {
-    fetch(`http://localhost:5000/topScholarship?page=${currentPage}&size=${itemsPerPage}&search=${search}`)
+    fetch(`https://scholarship-management-system-server-chi.vercel.app/topScholarship?page=${currentPage}&size=${itemsPerPage}&search=${search}`)
       .then((res) => res.json())
       .then((data) => setScholarship(data))
   }, [currentPage, itemsPerPage,search]);
