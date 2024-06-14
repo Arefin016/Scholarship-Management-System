@@ -87,8 +87,8 @@ const AllScholarShipDetailsPage = () => {
         </p>
         <p className="font-medium">Subject Cate: {subjectCategory}</p>
 
-        <p className="font-medium">Address: {universityLocation.country}</p>
-        <p className="font-medium">City: {universityLocation.city}</p>
+        <p className="font-medium">Address: {universityLocation?.country}</p>
+        <p className="font-medium">City: {universityLocation?.city}</p>
         <p className="font-medium">Fees: ${applicationFees}</p>
         <p className="font-medium">Desc: {scholarshipDescription}</p>
         <div className="mt-4">

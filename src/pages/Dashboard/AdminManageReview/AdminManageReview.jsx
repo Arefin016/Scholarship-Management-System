@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useReview from "../../../hooks/useReview";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import { FaTrashAlt } from "react-icons/fa";
 // import { FaEdit, FaTrashAlt } from "react-icons/fa";
 // import { Link } from "react-router-dom";
 

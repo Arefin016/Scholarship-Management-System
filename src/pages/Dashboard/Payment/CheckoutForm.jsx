@@ -101,7 +101,7 @@ const CheckoutForm = () => {
           })
         }
         //
-        navigate('/dashboard/paymentUserInformation', {state: {from: location}})
+        navigate(`/dashboard/paymentUserInformation`, {state: {from: location}})
       }
     }
   }

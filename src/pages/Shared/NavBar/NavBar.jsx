@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import logo from "../../../assets/home/ScholershipLogo.png"
 import { useContext } from "react"
 import { AuthContext } from "../../../providers/AuthProvider"
-import { FaAddressCard } from "react-icons/fa";
+// import { FaAddressCard } from "react-icons/fa";
 import useSubmit from "../../../hooks/useSubmit";
 
 const NavBar = () => {
@@ -23,9 +23,9 @@ const NavBar = () => {
       <li>
         <Link to="/AllScholarship">All Scholarship</Link>
       </li>
-      <li>
+      {/* <li>
         <Link to="/secret">Secret</Link>
-      </li>
+      </li> */}
       <li>
         <Link to="/dashboard/myApplication">
           {/* <button className="btn">

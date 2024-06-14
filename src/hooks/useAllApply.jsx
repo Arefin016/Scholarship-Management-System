@@ -1,19 +1,33 @@
-import { useEffect, useState } from "react"
+// import { useEffect, useState } from "react"
+import useAxiosPublic from "./useAxiosPublic"
+import { useQuery } from "@tanstack/react-query"
 
 const useAllApply = () => {
-  const [applies, setApplies] = useState([])
-  const [loading, setLoading] = useState(true)
+  const axiosPublic = useAxiosPublic();
+  const {
+    data: submits = [],
+    isPending: loading,
+    refetch,
+  } = useQuery({
+    queryKey: ["submits"],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/submits`)
+      return res.data
+    },
+  })
+  // const [applies, setApplies, refetch] = useState([])
+  // const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    fetch("http://localhost:5000/submits")
-      .then((res) => res.json())
-      .then((data) => {
-        setApplies(data)
-        setLoading(false)
-      })
-  }, [])
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/submits")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setApplies(data)
+  //       setLoading(false)
+  //     })
+  // }, [])
 
-  return [applies, loading]
+  return [submits, loading, refetch]
 }
 
 export default useAllApply
