@@ -11,6 +11,11 @@
 - **Username:** water@melon.com
 - **Password:** 123456Aa@
 
+## Moderator Credentials
+
+- **Username:** shah@gmail.com
+- **Password:** 123456Aa@
+
 ## Features
 
 - **Scholarship Listings**: Comprehensive database of available scholarships with detailed information.
