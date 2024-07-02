@@ -1,67 +1,33 @@
 # Scholarship Management System
 
-Welcome to the Scholarship Management System, a comprehensive platform designed to manage scholarships efficiently and effectively. 
+## Project Overview
 
-## Live Site URL
-[Visit the Scholarship Management System](https://b9-a12-scholarship.web.app/)
+- **Concept**: A web platform that helps students find and apply for scholarships.
+- **Problem Solved**: Simplifies the scholarship application process and increases access to educational funding opportunities.
+  [Visit the Scholarship Management System](https://b9-a12-scholarship.web.app/)
 
 ## Admin Credentials
+
 - **Username:** water@melon.com
 - **Password:** 123456Aa@
 
 ## Features
 
-1. **User Registration and Login:**
-   - Students can create accounts and log in securely.
-   - Separate admin login for managing the system.
+- **Scholarship Listings**: Comprehensive database of available scholarships with detailed information.
+- **Application Process**: Streamlined online application process with status tracking.
+- **User Profiles**: Personalized profiles for students to manage their applications and receive recommendations.
 
-2. **Scholarship Listings:**
-   - Browse through a comprehensive list of available scholarships.
-   - Filter scholarships based on criteria such as eligibility, amount, and deadline.
+## Technology Used
 
-3. **Application Management:**
-   - Students can apply for scholarships directly through the platform.
-   - Track the status of their applications in real-time.
+- **Front-End**: HTML, CSS, Tailwind, JavaScript, React, DaisyUI
+- **Back-End**: Node.js, Express.js
+- **Database**: MongoDB
+- **Others**: Firebase for authentication, Git for version control
 
-4. **Document Upload:**
-   - Upload required documents like transcripts, recommendation letters, and essays.
-   - Secure and easy-to-use document management system.
+## Running Locally
 
-5. **Notification System:**
-   - Receive email notifications for important updates, application status changes, and upcoming deadlines.
-
-6. **Admin Dashboard:**
-   - View and manage all scholarships and applications.
-   - Approve or reject applications with just a few clicks.
-
-7. **Reporting and Analytics:**
-   - Generate detailed reports on scholarship applications and awards.
-   - Analyze data to improve scholarship offerings and student outreach.
-
-8. **User Profile Management:**
-   - Students can update their personal information and academic details.
-   - View their application history and award status.
-
-9. **Responsive Design:**
-   - Fully responsive design ensures usability across all devices.
-   - Seamless experience on desktops, tablets, and smartphones.
-
-10. **Security Features:**
-    - Secure login system with encryption.
-    - Regular backups and data protection measures in place.
-
-## Getting Started
-
-To get started with the Scholarship Management System, visit the [live site](https://b9-a12-scholarship.web.app/) and create an account. Admins can log in using the credentials provided above to manage scholarships and applications.
-
-## Contributing
-
-We welcome contributions to improve the Scholarship Management System. Please fork the repository and submit pull requests for review.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-For any questions or support, please contact us at support@yourlivesiteurl.com.
+1. **Clone the Repository**: `git clone https://github.com/yourusername/Scholarship-Management-System.git`
+2. **Navigate to Project Directory**: `cd Scholarship-Management-System`
+3. **Install Dependencies**: `npm install`
+4. **Run the Application**: `npm start`
+5. **Open in Browser**: Visit `http://localhost:3000`

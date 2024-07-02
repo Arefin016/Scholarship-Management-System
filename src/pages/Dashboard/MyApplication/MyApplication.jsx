@@ -12,7 +12,7 @@ const MyApplication = () => {
     (total, item) => total + parseInt(item.applicationFees),
     0
   )
-  console.log(totalApplicationFees);
+  console.log(totalApplicationFees)
   const axiosSecure = useAxiosSecure()
 
   const handleDelete = (id) => {
@@ -83,12 +83,22 @@ const MyApplication = () => {
                 <td>{item.subjectCategory}</td>
                 <td>${item.applicationFees}</td>
                 <td>
-                  <button className="btn btn-ghost btn-xs">
+                  {/* <button className="btn btn-ghost btn-xs">
                     <TbListDetails></TbListDetails>
-                  </button>
-                  <button className="btn btn-ghost btn-xs">
+                  </button> */}
+                  <Link to={`/AllScholarship`}>
+                    <button className="btn btn-ghost btn-xs">
+                      <TbListDetails></TbListDetails>
+                    </button>
+                  </Link>
+                  {/* <button className="btn btn-ghost btn-xs">
                     <FaEdit></FaEdit>
-                  </button>
+                  </button> */}
+                  <Link to={`/dashboard/updateScholarship/${item._id}`}>
+                    <button className="btn btn-ghost btn-xs">
+                      <FaEdit></FaEdit>
+                    </button>
+                  </Link>
                   <button
                     onClick={() => handleDelete(item._id)}
                     className="btn btn-ghost btn-xs"
@@ -98,7 +108,7 @@ const MyApplication = () => {
                 </td>
                 <td>
                   <Link to={`/dashboard/addReview/${item._id}`}>
-                  <button className="btn btn-ghost">Add Review</button>
+                    <button className="btn btn-ghost">Add Review</button>
                   </Link>
                 </td>
               </tr>
